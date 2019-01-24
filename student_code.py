@@ -44,11 +44,10 @@ class KnowledgeBase(object):
         Returns:
             ListOfBindings|False - ListOfBindings if result found, False otherwise
         """
-        # print("Asking {!r}".format(fact))
+        print("Asking {!r}".format(fact))
         binding_list = ListOfBindings()
         for f in self.facts:
             result = match(fact.statement, f.statement)
-            #print("result = " + str(result))
             if result != False:
                 binding_list.add_bindings(result)
         # print(binding_list)
